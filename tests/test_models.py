@@ -4,12 +4,9 @@ from order_app import Product
 
 @pytest.fixture
 def product():
-    start = "Setting up product for test"
-    print(f"{start:_^40}")
     product = Product(name= 'Blender', price=299.99, stock=9)
     yield product
-    end = "End"
-    print(f"{end:_^40}")
+
 
 def test_reduce_stock(product):
     product.reduce_stock(3)
